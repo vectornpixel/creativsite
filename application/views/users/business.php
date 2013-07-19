@@ -1,5 +1,5 @@
 <div class="container">
-
+<div class="break"></div>
         <div class="userinfo">
             <div class="usercontact">
                 <div class="userphoto">
@@ -25,10 +25,10 @@
         </div>
         <div class="clearfix"></div>
       <!-- Example row of columns -->
-      <div class="row">
+ 
           <h2>Add Project</h2>
           <hr>
-            <div class="row">
+         
                 <div class="span7">
                     <form>
                     <fieldset>
@@ -49,7 +49,7 @@
                     </fieldset>
                     </form>
                 </div>
-            </div>
+         <div class="clearfix"></div>
           
           <div class="row">
         <div class="span7">
@@ -89,13 +89,13 @@
              
         </div>
           </div>
-      </div>
+   
       
-      <div class="row">
+    
   
    <div class="clearfix"></div>
       
-   <div class="row">
+
        <h2>Account Information</h2>
        <hr>
        <div class="span7">
@@ -136,8 +136,8 @@
                 </fieldset>
                </form>
        </div>
-   </div>
-  <div class="row">
+       <div class="clearfix"></div>
+ 
        <h2>Change Password</h2>
        <hr>
        <div class="span7">
@@ -152,10 +152,7 @@
                 </fieldset>
                </form>
        </div>
-   </div>
 
-      <footer>
-        <p>&copy; Company 2013</p>
-      </footer>
 
-    </div>
+ 
+</div>
