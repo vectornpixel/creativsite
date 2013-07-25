@@ -1,3 +1,4 @@
+
 <div class="container">
 <div class="break"></div>
         <div class="userinfo">
@@ -16,41 +17,21 @@
                  </div>
             </div>
             <div class="userbio">
-                <h2>Bobs Bakery</h5>
+            
+                <h2></h5>
+          
                 <h5>Detroit, MI</h3>
-                <a href="#">bobsbakery.com</a>
-                <p><b>Industry: </b>Bakery, Food</p>
+                <a href="#">vectornpixel.com</a>
+                <p><b>Experience: </b>Web Design, Graphic Design</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut augue vitae quam vehicula tincidunt. Integer dictum condimentum arcu at pellentesque.</p>
             </div>
         </div>
         <div class="clearfix"></div>
       <!-- Example row of columns -->
  
-          <h2>Add Project</h2>
+          <h2>Project Management</h2>
           <hr>
-         
-                <div class="span7">
-                    <form>
-                    <fieldset>
-                    <label>Project Type</label>
-                    <select>
-                    <option>Web Design</option>
-                    <option>Wordpress Design</option>
-                    </select>
-                    <label>Apply Slots</label>
-                    <select>
-                    <option>1</option>
-                    <option>2</option>
-                    </select>
-                    <label>Project Description</label>
-                    <textarea rows="3"></textarea>
-                    <br>
-                    <button type="submit" class="btn">Add Project</button>
-                    </fieldset>
-                    </form>
-                </div>
-         <div class="clearfix"></div>
-          
+          <h4>PROJECTS APPLIED FOR</h4>
           <div class="row">
         <div class="span7">
             <ul class="job2">
@@ -92,7 +73,76 @@
    
       
     
-  
+          <h2>Upload Designs</h2>
+          <hr>
+              <form>
+                <fieldset>
+                <label>Design Type</label>
+                <select>
+                    <option>Graphic Designer</option>
+                    <option>Web Designer</option>
+                </select>
+                <label>Upload Files</label>
+                <div class="input-append">
+                <input class="span2" id="appendedInputButtons" type="text">
+                <button class="btn" type="button">Browse</button>
+                <button class="btn" type="button">Upload</button>
+                </div>
+                <br>
+                <button type="submit" class="btn">Submit</button>
+                </fieldset>
+               </form>
+          
+           <div class="row offsetbottom">
+        <div class="span4">
+          <div class="item">
+            <div class="thumb">
+                <img src="<?php echo (URL.'images/holder-item.jpg');?>">
+            <div class="info">
+                <h3>Logo Design</h3>
+            </div>
+            </div>
+    
+       </div>
+        </div>
+          <div class="span4">
+          <div class="item">
+        <div class="thumb">
+            <img src="<?php echo (URL.'images/holder-item.jpg');?>">
+        <div class="info">
+            <h3>Logo Design</h3>
+        </div>
+        </div>
+   
+       </div>
+        </div>
+          <div class="span4">
+          <div class="item">
+        <div class="thumb">
+            <img src="<?php echo (URL.'images/holder-item.jpg');?>">
+        <div class="info">
+            <h3>Logo Design</h3>
+        </div>
+        </div>
+   
+       </div>
+        </div>
+          
+          <div class="span4">
+          <div class="item">
+        <div class="thumb">
+            <img src="<?php echo (URL.'images/holder-item.jpg');?>">
+        <div class="info">
+            <h3>Logo Design</h3>
+        </div>
+        </div>
+   
+       </div>
+        </div>
+        
+      </div>
+          
+       
    <div class="clearfix"></div>
       
 
@@ -103,15 +153,13 @@
                 <fieldset>
                  <label>Name</label>
                  <input type="text" placeholder="type name">
-                 <label>Business Name</label>
-                 <input type="text" placeholder="type name">
                  <label>Email</label>
                  <input type="text" placeholder="email address">
                  
-                <label>Business Type</label>
+                <label>Design Experience</label>
                 <select>
-                    <option>Bakery</option>
-                    <option>Real Estate</option>
+                    <option>Graphic Designer</option>
+                    <option>Web Designer</option>
                 </select>
                 <label>City</label>
                 <input type="text" placeholder="">
@@ -127,17 +175,16 @@
                 </label>
                 <label class="radio">
                 <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                Closed for projects ( designers cannot contact you )
+                Closed for projects ( businesses cannot contact you )
                 </label>
-                <label>Business Summary</label>
+                <label>Designer Summary</label>
                 <textarea rows="3"></textarea>
                 <br>
                 <button type="submit" class="btn">Submit</button>
                 </fieldset>
                </form>
        </div>
-       <div class="clearfix"></div>
- 
+  <div class="clearfix"></div>
        <h2>Change Password</h2>
        <hr>
        <div class="span7">
@@ -152,7 +199,6 @@
                 </fieldset>
                </form>
        </div>
-
-
  
-</div>
+
+    </div>

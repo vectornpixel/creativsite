@@ -17,11 +17,21 @@
                  </div>
             </div>
             <div class="userbio">
-                <h2>Asim Craft</h5>
-                <h5>Detroit, MI</h3>
-                <a href="#">vectornpixel.com</a>
-                <p><b>Experience: </b>Web Design, Graphic Design</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut augue vitae quam vehicula tincidunt. Integer dictum condimentum arcu at pellentesque.</p>
+               <?php if(isset($records)) : foreach($records as $row) : ?>
+                <h2><?php echo $row->firstname; ?> <?php echo $row->lastname; ?></h2>
+                <h5><?php echo $row->location; ?></h3>
+                <a href="#"><?php echo $row->website; ?></a>
+                <p><b>Experience: </b><?php echo $row->industry; ?></p>
+                <p><?php echo $row->bio; ?></p>
+            
+                
+                <?php endforeach; ?>
+                <?php else : ?>
+                <h2> No records </h2>
+                <?php endif; ?>
+
+             
+                
             </div>
         </div>
         <div class="clearfix"></div>
@@ -147,26 +157,28 @@
        <h2>Account Information</h2>
        <hr>
        <div class="span7">
-           <form>
+          <?php echo form_open('profile/update')?>
                 <fieldset>
-                 <label>Name</label>
-                 <input type="text" placeholder="type name">
+                 <label>First Name</label>
+                 <input type="text" placeholder="type name" name="firstname" id="firstname">
+                 <label>Last Name</label>
+                 <input type="text" placeholder="type name" name="lastname" id="lastname">
                  <label>Email</label>
-                 <input type="text" placeholder="email address">
+                 <input type="text" placeholder="email address" name="email" id="email">
                  
                 <label>Design Experience</label>
-                <select>
+                <select name="industry" id="industry">
                     <option>Graphic Designer</option>
                     <option>Web Designer</option>
                 </select>
                 <label>City</label>
-                <input type="text" placeholder="">
+                <input type="text" placeholder="" name="city" id="city">
                 <label>State</label>
-                <select>
+                <select name="state" id="state">
                     <option>Michigan</option>
                 </select>
                 <label>Web Site</label>
-                 <input type="text" placeholder="">
+                 <input type="text" placeholder="" name="website" id="website">
                  <label class="radio">
                 <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
                 Open for projects
@@ -176,11 +188,11 @@
                 Closed for projects ( businesses cannot contact you )
                 </label>
                 <label>Designer Summary</label>
-                <textarea rows="3"></textarea>
+                <textarea rows="3" name="bio" id="bio"></textarea>
                 <br>
                 <button type="submit" class="btn">Submit</button>
                 </fieldset>
-               </form>
+             <?php echo form_close();?>
        </div>
   <div class="clearfix"></div>
        <h2>Change Password</h2>
