@@ -8,6 +8,7 @@
     echo form_input('username', 'Username');
     echo form_password('password', 'Password');
     echo form_submit('submit', 'Login');
+    // anchor is how you link
     echo anchor('login/signup', 'Create Account');
 
     ?>

@@ -17,4 +17,17 @@ class Membership_model extends CI_Model{
             return $validate;
         }
     }
+    // function to create member and insert there data in array to the database
+    function create_member(){
+        $new_member_insert_data = array(
+            'firstname' => $this->input->post('firstname'),  
+            'lastname' => $this->input->post('lastname'),
+            'email' => $this->input->post('email'),
+            'username' => $this->input->post('username'),
+            'password' => md5($this->input->post('password'))
+        );
+        // insert this into the database from new member insert data array
+        $insert = $this->db->insert('freeusers', $new_member_insert_data);  
+        return $insert;
+    }
 }
