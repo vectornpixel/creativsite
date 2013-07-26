@@ -25,7 +25,8 @@ class User_model extends CI_Model{
         $this->db->where('id',1);
         $this->db->update('freeusers',$data);
     }
-    
+
+ 
     function delete_row(){
         $this->db->where('id',$this->uri->segment(3));
         $this->db->delete('freeusers');

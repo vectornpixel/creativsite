@@ -156,7 +156,7 @@
        <h2>Account Information</h2>
        <hr>
        <div class="span7">
-          <?php echo form_open('profile/update')?>
+          <?php echo form_open('site/update')?>
                 <fieldset>
                  <label>First Name</label>
                  <input type="text" placeholder="<?php echo $row->firstname; ?>" name="firstname" id="firstname">

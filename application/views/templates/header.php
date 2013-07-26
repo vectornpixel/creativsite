@@ -16,9 +16,13 @@
       
             </div>
           <div class="pull-right">
-              <img src="<?php echo (URL.'images/nav-user.jpg');?>">
-              <img src="<?php echo (URL.'images/nav-settings.jpg');?>">
-
+              <?php if(isset($records)) : foreach($records as $row) : ?>
+              <a href="<?php echo (URL.'site/profile/'. $row->username); ?>"><img src="<?php echo (URL.'images/nav-user.jpg');?>"></a>
+              <a href="<?php echo (URL.'site/edit/'. $row->username); ?>"><img src="<?php echo (URL.'images/nav-settings.jpg');?>">
+              <?php endforeach; ?>
+                <?php else : ?>
+                
+                <?php endif; ?>
             </div>
         <div class="container">
          

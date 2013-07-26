@@ -26,7 +26,7 @@ class Login extends CI_Controller{
             // loads a session, takes the user informationf rom $data and adds it to session
             $this->session->set_userdata($data);
            
-            redirect('site/members_area/');
+            redirect('site/members/');
         }
         else{
             // loads the login form again if logged in incorrectly

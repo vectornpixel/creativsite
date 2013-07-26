@@ -5,7 +5,23 @@ class Site extends CI_Controller{
         parent::__construct();
     }
 
-    function members_area(){
+    function members(){
+        
+        $this->load->model('user_model');
+        $data = array(
+        $session_id = $this->session->userdata('session_id')
+        ); // if no data is there and you wont get an error
+        if($query = $this->user_model->get_profile())
+        {
+            $data['records'] = $query;
+        }
+        //$data['username'] = $this->session->userdata('username');
+        $data['main_content'] = '/pages/browse_business';
+        $this->load->view('templates/template',$data);
+        
+    }
+    
+    function profile(){
         
         $this->load->model('user_model');
         $data = array(
@@ -20,7 +36,6 @@ class Site extends CI_Controller{
         $this->load->view('templates/template',$data);
         
     }
-    
      function edit(){
         
         $this->load->model('user_model');
@@ -36,7 +51,9 @@ class Site extends CI_Controller{
         $this->load->view('templates/template',$data);
         
     }
+    // this is to update the user profile
     function update(){
+        $this->load->model('user_model');
         $data = array(
             'firstname' => $this->input->post('firstname'),
             'lastname' => $this->input->post('lastname'),
@@ -47,7 +64,7 @@ class Site extends CI_Controller{
             'location' => $this->input->post('location')
         );
         $this->user_model->update_profile($data);
-        $this->index();
+    
     }
     
     // creates the array for adding info to database
