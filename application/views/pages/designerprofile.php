@@ -1,5 +1,5 @@
 <div class="container">
-
+<div class="break"></div>
         <div class="userinfo">
             <div class="usercontact">
                 <div class="userphoto">
@@ -16,11 +16,19 @@
                  </div>
             </div>
             <div class="userbio">
-                <h2>Asim Craft</h5>
-                <h5>Detroit, MI</h3>
-                <a href="#">vectornpixel.com</a>
-                <p><b>Experience: </b>Web Design, Graphic Design</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut augue vitae quam vehicula tincidunt. Integer dictum condimentum arcu at pellentesque.</p>
+               <?php if(isset($records)) : foreach($records as $row) : ?>
+                <h2><?php echo anchor('site/edit/'. $row->username, $row->firstname); $row->firstname; ?> <?php echo $row->lastname; ?></h2>
+                <h5><?php echo $row->location; ?></h3>
+                <?php echo anchor($row->website);  $row->website; ?>
+                <p><b>Experience: </b><?php echo $row->industry; ?></p>
+                <p><?php echo $row->bio; ?></p>
+            
+                
+                <?php endforeach; ?>
+                <?php else : ?>
+                <h2> No records </h2>
+                <?php endif; ?>
+ 
             </div>
         </div>
         <div class="clearfix"></div>

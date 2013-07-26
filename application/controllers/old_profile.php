@@ -2,9 +2,11 @@
 class Profile extends CI_Controller{
     // creates view for this controller
     function index(){
+        
         $this->load->model('profile_model');
-        $data = array(); // if no data is there and you wont get an error
-
+        $data = array(
+            
+        ); // if no data is there and you wont get an error
         if($query = $this->profile_model->get_profile())
         {
             $data['records'] = $query;

@@ -30,4 +30,6 @@ class Membership_model extends CI_Model{
         $insert = $this->db->insert('freeusers', $new_member_insert_data);  
         return $insert;
     }
+    
+   
 }

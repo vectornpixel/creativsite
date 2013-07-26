@@ -1,6 +1,6 @@
 <h1>Create Account</h1>
 
-<fieldset>
+<fieldset class="login">
     <legend>Personal Information</legend>
     
     <?php
@@ -14,7 +14,7 @@
     ?>
 </fieldset>
 
-<fieldset>
+<fieldset class="login">
     <legend>Login Info</legend>
     <?php
         echo form_input('username', set_value('username', 'Username'));

@@ -2,9 +2,15 @@
 
 class Profile_model extends CI_Model{
     
+ 
     function get_profile(){
+        //$session_id = $this->session->userdata('session_id')
+        $this->db->where('id', $this->input->get('id'));
+        //$session_id = $this->session->userdata('session_id');
+        //$this->db->where('id', $session_id);
         $query = $this->db->get('freeusers');
-        return $query->result();
+        return $query->result();     
+          
     }
     
     function insert_profile($data){

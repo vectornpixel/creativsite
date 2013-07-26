@@ -14,20 +14,26 @@ class Login extends CI_Controller{
         
         // if the users credentials validated
         if($query){
+         
             $data = array(
                 'username' => $this->input->post('username'),
-                'is_logged_in' => true
+                'email' => $this->input->post('email'),
+                'id' => $this->input->post('id') ,
+                'is_logged_in' => true,
+              
             );
             
             // loads a session, takes the user informationf rom $data and adds it to session
             $this->session->set_userdata($data);
-            redirect('site/members_area');
+           
+            redirect('site/members_area/');
         }
         else{
             // loads the login form again if logged in incorrectly
             $this->index();
         }
     }
+   
     function signup(){
         $data['main_content'] = 'pages/signup_form';
         $this->load->view('/templates/template',$data);

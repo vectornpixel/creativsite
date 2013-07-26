@@ -1,6 +1,6 @@
 <div id="login_form">
     <h1>Login</h1>
-    
+    <?php //echo '<pre>' . print_r($this->session->userdata, TRUE) . '</pre>'; ?>
     <?php
     // looks at the login controllers with the validate credentials method
     echo form_open('login/validate_credentials');
