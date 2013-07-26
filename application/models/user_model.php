@@ -22,7 +22,10 @@ class User_model extends CI_Model{
     }
     
     function update_profile($data){
-        $this->db->where('id',1);
+        $id = $this->session->userdata('id');
+        //$updateinfo = "UPDATE freeusers SET $data WHERE id='$id'";
+        //$id = $this->input->post('id');
+        $this->db->where('id',$id);
         $this->db->update('freeusers',$data);
     }
 

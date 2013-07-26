@@ -55,6 +55,7 @@ class Site extends CI_Controller{
     function update(){
         $this->load->model('user_model');
         $data = array(
+            //$session_id = $this->session->userdata('session_id'),
             'firstname' => $this->input->post('firstname'),
             'lastname' => $this->input->post('lastname'),
             'email' => $this->input->post('email'),
@@ -63,6 +64,7 @@ class Site extends CI_Controller{
             'industry' => $this->input->post('industry'),
             'location' => $this->input->post('location')
         );
+
         $this->user_model->update_profile($data);
         $this->members();
     }
