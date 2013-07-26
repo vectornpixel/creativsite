@@ -32,7 +32,7 @@ class Site extends CI_Controller{
             $data['records'] = $query;
         }
         //$data['username'] = $this->session->userdata('username');
-        $data['main_content'] = '/pages/designerprofile';
+        $data['main_content'] = '/pages/profile_designer';
         $this->load->view('templates/template',$data);
         
     }
@@ -47,7 +47,7 @@ class Site extends CI_Controller{
             $data['records'] = $query;
         }
         //$data['username'] = $this->session->userdata('username');
-        $data['main_content'] = '/pages/members';
+        $data['main_content'] = '/pages/settings';
         $this->load->view('templates/template',$data);
         
     }
@@ -64,7 +64,26 @@ class Site extends CI_Controller{
             'location' => $this->input->post('location')
         );
         $this->user_model->update_profile($data);
+        $this->members();
+    }
     
+    function gallery(){
+        $this->load->model('user_model');
+        $data = array(
+        $session_id = $this->session->userdata('session_id')
+        ); // if no data is there and you wont get an error
+        if($query = $this->user_model->get_profile())
+        {
+            $data['records'] = $query;
+        }
+        // loads the model. if the upload posts, call the do model method from the gallery model Model.
+        $this->load->model('gallery_model');
+        if ($this->input->post('upload')){
+            $this->gallery_model->do_upload();
+        }
+        $data['images'] = $this->gallery_model->get_images();
+        $data['main_content'] = '/pages/gallery';
+        $this->load->view('templates/template',$data);
     }
     
     // creates the array for adding info to database

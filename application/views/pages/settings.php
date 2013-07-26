@@ -82,68 +82,48 @@
     
           <h2>Upload Designs</h2>
           <hr>
-              <form>
-                <fieldset>
-                <label>Design Type</label>
-                <select>
-                    <option>Graphic Designer</option>
-                    <option>Web Designer</option>
+              
+
+            <div id="upload">
+                <label>Category</label>
+                <select name="industry" id="industry">
+                    <option>Logo Design</option>
+                    <option>Web Design</option>
                 </select>
-                <label>Upload Files</label>
-                <div class="input-append">
-                <input class="span2" id="appendedInputButtons" type="text">
-                <button class="btn" type="button">Browse</button>
-                <button class="btn" type="button">Upload</button>
-                </div>
-                <br>
-                <button type="submit" class="btn">Submit</button>
-                </fieldset>
-               </form>
+                <?php
+                // loads gallery controller
+                echo form_open_multipart('site/gallery');
+                echo form_upload('userfile');
+                echo form_submit('upload', 'Upload');
+                echo form_close();
+                ?>
+            </div>
           
            <div class="row offsetbottom">
         <div class="span4">
           <div class="item">
             <div class="thumb">
-                <img src="<?php echo (URL.'images/holder-item.jpg');?>">
-            <div class="info">
+                <?php if(isset($images) && count($images)):
+                    foreach($images as $image): ?>
+                <div class="thumb">
+                    <a href="<?php echo $image['url']; ?>">
+                        <img src="<?php echo $image['thumb_url'];?>">
+
+                    </a>
+                </div>
+                <div class="info">
                 <h3>Logo Design</h3>
-            </div>
+                </div>
+                <?php endforeach; else: ;?>
+                <img src="<?php echo (URL.'images/holder-item.jpg');?>">
+                <div id="blank_gallery">Please Upload an Image</div>
+                <div class="info">
+                <h3>No Title Added</h3>
+                 </div>
+                <?php endif; ?>
+
             </div>
     
-       </div>
-        </div>
-          <div class="span4">
-          <div class="item">
-        <div class="thumb">
-            <img src="<?php echo (URL.'images/holder-item.jpg');?>">
-        <div class="info">
-            <h3>Logo Design</h3>
-        </div>
-        </div>
-   
-       </div>
-        </div>
-          <div class="span4">
-          <div class="item">
-        <div class="thumb">
-            <img src="<?php echo (URL.'images/holder-item.jpg');?>">
-        <div class="info">
-            <h3>Logo Design</h3>
-        </div>
-        </div>
-   
-       </div>
-        </div>
-          
-          <div class="span4">
-          <div class="item">
-        <div class="thumb">
-            <img src="<?php echo (URL.'images/holder-item.jpg');?>">
-        <div class="info">
-            <h3>Logo Design</h3>
-        </div>
-        </div>
-   
        </div>
         </div>
         
