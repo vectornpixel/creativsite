@@ -7,9 +7,9 @@ class User_model extends CI_Model{
     
  
     function get_profile(){
-      // $this->db->where('id', 1);
-        $id = $this->uri->segment(3);
-        $this->db->where('username =',$id);
+        //$id = $this->uri->segment(3);
+        $id = $this->session->userdata('username');
+        $this->db->where('username',$id);
        $query = $this->db->get('freeusers');
        return $query->result();
 
@@ -22,10 +22,10 @@ class User_model extends CI_Model{
     }
     
     function update_profile($data){
-        $id = $this->session->userdata('id');
+        $id = $this->session->userdata('username');
         //$updateinfo = "UPDATE freeusers SET $data WHERE id='$id'";
         //$id = $this->input->post('id');
-        $this->db->where('id',$id);
+        $this->db->where('username',$id);
         $this->db->update('freeusers',$data);
     }
 

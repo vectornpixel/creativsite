@@ -3,6 +3,7 @@
         <div class="userinfo">
             <div class="usercontact">
                 <div class="userphoto">
+                    
                     <img src="<?php echo (URL.'images/user-photo.jpg');?>">
                  </div>
                 <div class="usericons"> 
@@ -16,6 +17,7 @@
                  </div>
             </div>
             <div class="userbio">
+                <h4><?php echo anchor('login/logout/')?> </h4>
                <?php if(isset($records)) : foreach($records as $row) : ?>
                 <h2><?php echo anchor('site/edit/'. $row->username, $row->firstname); $row->firstname; ?> <?php echo $row->lastname; ?></h2>
                 <h5><?php echo $row->location; ?></h3>

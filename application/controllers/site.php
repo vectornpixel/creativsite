@@ -100,9 +100,7 @@ class Site extends CI_Controller{
         $this->user_model->insert_profile();
         $this->index();
     }
-    function logout(){
-        $this->session->sess_destroy();
-    }
+    
      function is_logged_in(){
         return (bool) $this->session->userdata('is_logged_in');
     }
