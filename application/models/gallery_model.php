@@ -7,8 +7,8 @@ class Gallery_model extends CI_Model{
     public function __construct(){
         parent::__construct();
         //sets the gallery path to applications folder and gallery image path
-        $this->gallery_path = realpath(APPPATH . '../images');
-        $this->gallery_path_url = base_url().'images/';
+        $this->gallery_path = realpath(APPPATH . '../portfolio');
+        $this->gallery_path_url = base_url().'portfolio/';
     }
     
     function do_upload(){
@@ -26,19 +26,31 @@ class Gallery_model extends CI_Model{
         $this->upload->do_upload();
         //returns data about upload ( file location )
         $image_data = $this->upload->data();
-        
+ 
         $config = array(
             'source_image' => $image_data['full_path'],
             'new_image' => $this->gallery_path . '/thumbs',
             'maintain_ration' => true,
-            'width' => 150,
-            'height' => 100
+            'width' => 250,
+            'height' => 220
         );
+        
+        
+        
+        $data = array(
+        'username' => $this->input->post('username'),
+        'category' => $this->input->post('category'),
+        'filename' => $image_data['file_name'],
+           );
+        
+        $this->db->insert('portfolio', $data );
+        
         $this->load->library('image_lib', $config);
         $this->image_lib->resize();
         
     }
     function get_images(){
+        
         $files = scandir($this->gallery_path);
         // substracts these out of array
         $files = array_diff($files, array('.', '..','thumbs'));

@@ -16,7 +16,7 @@ class User_model extends CI_Model{
           
     }
     
-    function insert_profile($data){
+    function insert_gallery($data){
         $this->db->insert('freeusers',$data);
         return;
     }

@@ -172,7 +172,7 @@
                     <option>Web Designer</option>
                 </select>
                 <label>City</label>
-                <input type="text" placeholder="" name="city" id="city">
+                <input type="text" placeholder="" name="location" id="location">
                 <label>State</label>
                 <select name="state" id="state">
                     <option>Michigan</option>

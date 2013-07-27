@@ -72,7 +72,7 @@ class Site extends CI_Controller{
     function gallery(){
         $this->load->model('user_model');
         $data = array(
-        $session_id = $this->session->userdata('session_id')
+        //$session_id = $this->session->userdata('session_id')
         ); // if no data is there and you wont get an error
         if($query = $this->user_model->get_profile())
         {

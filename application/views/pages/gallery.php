@@ -42,7 +42,7 @@
 
             <div id="upload">
                 <label>Category</label>
-                <select name="industry" id="industry">
+                <select name="category" id="category">
                     <option>Logo Design</option>
                     <option>Web Design</option>
                 </select>
