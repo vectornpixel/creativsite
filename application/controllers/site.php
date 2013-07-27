@@ -77,13 +77,17 @@ class Site extends CI_Controller{
         if($query = $this->user_model->get_profile())
         {
             $data['records'] = $query;
+        
+            
         }
         // loads the model. if the upload posts, call the do model method from the gallery model Model.
         $this->load->model('gallery_model');
         if ($this->input->post('upload')){
             $this->gallery_model->do_upload();
         }
+        // displays the images
         $data['images'] = $this->gallery_model->get_images();
+        
         $data['main_content'] = '/pages/gallery';
         $this->load->view('templates/template',$data);
     }

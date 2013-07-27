@@ -21,6 +21,11 @@ class User_model extends CI_Model{
         return;
     }
     
+    function add_port($data){
+        $this->db->insert('portfolio', $data );
+        return;
+    }
+    
     function update_profile($data){
         $id = $this->session->userdata('username');
         //$updateinfo = "UPDATE freeusers SET $data WHERE id='$id'";
