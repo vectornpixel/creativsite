@@ -52,7 +52,6 @@ class Gallery_model extends CI_Model{
             
         );
         
-        
 
         $data = array(
         'username' => $id,
@@ -84,7 +83,7 @@ class Gallery_model extends CI_Model{
         foreach ($files as $file){
             $images [] = array(
                 'url' => '../portfolio/' .$id . '/' . $file,
-                'thumb_url' => '../portfolio/' .$id . '/thumbs/' . $file
+                'thumb_url' => base_url() .$uploadPath . '/thumbs/' . $file
             );
         }
         return $images;
