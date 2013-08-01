@@ -23,7 +23,7 @@ class Login extends CI_Controller{
               
             );
             
-            // loads a session, takes the user informationf rom $data and adds it to session
+            // loads a session, takes the user information from $data and adds it to session
             $this->session->set_userdata($data);
            
             redirect('site/members/');
@@ -45,7 +45,7 @@ class Login extends CI_Controller{
         
         $this->form_validation->set_rules('firstname', 'First Name', 'trim|required');
         $this->form_validation->set_rules('lastname', 'Last Name', 'trim|required');
-        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|calback__unique_email');
         $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[4]');
         $this->form_validation->set_rules('password', 'Password', 'trim|required|min+length[4]|max_length[32]');
         $this->form_validation->set_rules('password2', 'Password Confirmation', 'trim|required|matches[password]');
@@ -72,5 +72,21 @@ class Login extends CI_Controller{
         $this->session->sess_destroy();
         $this->index();  
     }
+    
+    /*function _unique_email($str){
+        $id = $this->uri-segment(4);
+        
+        $this->db->where('email', $this->input->post('email'));
+        !$id || $this->db->where('id !=', $id);
+        $user = $this->db->get('freeusers');
+        if(count($user)){
+            $this->validate_credentials->set_message('_unique_email', '%s should be unique');
+        return FALSE;
+            
+        }
+        return TRUE;
+    }*/
+    
+    
     
 }

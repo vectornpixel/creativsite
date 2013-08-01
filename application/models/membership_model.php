@@ -26,6 +26,7 @@ class Membership_model extends CI_Model{
             'username' => $this->input->post('username'),
             'password' => md5($this->input->post('password'))
         );
+                
         // insert this into the database from new member insert data array
         $insert = $this->db->insert('freeusers', $new_member_insert_data);  
         return $insert;
