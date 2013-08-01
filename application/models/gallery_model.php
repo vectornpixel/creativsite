@@ -16,14 +16,14 @@ class Gallery_model extends CI_Model{
          /**tested and working session script**/
         $id = $this->session->userdata('username');
         $this->db->where('username',$id);
-        $query = $this->db->get('freeusers');
         /***/
         
         $folderName = $id;
         $uploadPath =  './portfolio/' . $folderName;
         if(!file_exists($uploadPath)){
             $create = mkdir($uploadPath, 0777);
-            if(!$create)
+            $createThumbsFolder = mkdir($uploadPath . '/thumbs', 0777);
+            if(!$create || ! $createThumbsFolder)
                 return;
         }
 
@@ -45,7 +45,7 @@ class Gallery_model extends CI_Model{
         
         $config = array(
             'source_image' => $image_data['full_path'],
-            'new_image' => $this->gallery_path . '/thumbs',
+            'new_image' => $uploadPath. '/thumbs',
             'maintain_ration' => true,
             'width' => 250,
             'height' => 220
@@ -55,7 +55,7 @@ class Gallery_model extends CI_Model{
         
 
         $data = array(
-        'username' => $this->input->post('username'),
+        'username' => $id,
         'category' => $this->input->post('category'),
         'filename' => $image_data['file_name'],
            );
@@ -69,18 +69,22 @@ class Gallery_model extends CI_Model{
     
     
     function get_images(){
+        /**tested and working session script**/
         $id = $this->session->userdata('username');
         $this->db->where('username',$id);
-
-        $files = scandir($this->gallery_path);
+        /***/
+        $folderName = $id;
+        $uploadPath =  'portfolio/' . $folderName;
+        
+        $files = scandir($uploadPath);
         // substracts these out of array
         $files = array_diff($files, array('.', '..','thumbs'));
         $images = array();
         
         foreach ($files as $file){
             $images [] = array(
-                'url' => $this->gallery_path_url . $file,
-                'thumb_url' => $this->gallery_path_url . 'thumbs/' .$file . '/' . $id
+                'url' => '../portfolio/' .$id . '/' . $file,
+                'thumb_url' => '../portfolio/' .$id . '/thumbs/' . $file
             );
         }
         return $images;
