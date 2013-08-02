@@ -30,9 +30,9 @@
           <a class="brand" href="#">creativconnect</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li><a href="<?php echo (URL.'index.php/pages/view/designers');?>">Designers</a></li>
-              <li><a href="<?php echo (URL.'index.php/pages/view/business');?>">Businesses</a></li>
-              <li><a href="<?php echo (URL.'index.php/pages/view/browsejobs');?>">Browse Jobs</a></li>
+              <li><a href="<?php echo (URL.'site/designers');?>">Designers</a></li>
+              <li><a href="<?php echo (URL.'site/business');?>">Businesses</a></li>
+              <li><a href="<?php echo (URL.'site/jobs');?>">Browse Jobs</a></li>
             </ul>
             
             

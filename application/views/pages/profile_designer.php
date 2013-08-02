@@ -47,103 +47,33 @@
    <div class="clearfix"></div>
       
       <div class="row offsetbottom">
-        <div class="span4">
-          <div class="item">
-            <div class="thumb">
+               
+                <?php if(isset($images) && count($images)):
+                foreach($images as $image): ?>  
+                 <div class="span4">
+                    <div class="item">
+                        <div class="thumb">
+                            <a href="<?php echo $image['url']; ?>">
+                            <img src="<?php echo $image['thumb_url'];?>">
+                            </a>
+                            <div class="info">
+                            <h3>Logo Design</h3>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+               <?php endforeach; else: ;?>
                 <img src="<?php echo (URL.'images/holder-item.jpg');?>">
-            <div class="info">
-                <h3>Logo Design</h3>
-            </div>
-            </div>
-    
-       </div>
-        </div>
-          <div class="span4">
-          <div class="item">
-        <div class="thumb">
-            <img src="<?php echo (URL.'images/holder-item.jpg');?>">
-        <div class="info">
-            <h3>Logo Design</h3>
-        </div>
-        </div>
-   
-       </div>
-        </div>
-          <div class="span4">
-          <div class="item">
-        <div class="thumb">
-            <img src="<?php echo (URL.'images/holder-item.jpg');?>">
-        <div class="info">
-            <h3>Logo Design</h3>
-        </div>
-        </div>
-   
-       </div>
-        </div>
-          
-          <div class="span4">
-          <div class="item">
-        <div class="thumb">
-            <img src="<?php echo (URL.'images/holder-item.jpg');?>">
-        <div class="info">
-            <h3>Logo Design</h3>
-        </div>
-        </div>
-   
-       </div>
-        </div>
+                <div id="blank_gallery">Please Upload an Image</div>
+                <div class="info">
+                <h3>No Title Added</h3>
+                 </div>
+                <?php endif; ?>
+               
         
       </div>
       
-      
-      <div class="row">
-        <div class="span4">
-          <div class="item">
-            <div class="thumb">
-                <img src="<?php echo (URL.'images/holder-item.jpg');?>">
-            <div class="info">
-                <h3>Logo Design</h3>
-            </div>
-            </div>
-    
-       </div>
-        </div>
-          <div class="span4">
-          <div class="item">
-        <div class="thumb">
-            <img src="<?php echo (URL.'images/holder-item.jpg');?>">
-        <div class="info">
-            <h3>Logo Design</h3>
-        </div>
-        </div>
-   
-       </div>
-        </div>
-          <div class="span4">
-          <div class="item">
-        <div class="thumb">
-            <img src="<?php echo (URL.'images/holder-item.jpg');?>">
-        <div class="info">
-            <h3>Logo Design</h3>
-        </div>
-        </div>
-    
-       </div>
-        </div>
-          
-          <div class="span4">
-          <div class="item">
-        <div class="thumb">
-            <img src="<?php echo (URL.'images/holder-item.jpg');?>">
-        <div class="info">
-            <h3>Logo Design</h3>
-        </div>
-        </div>
-      
-       </div>
-        </div>
-          
-      </div>
+ 
 
       <hr>
 

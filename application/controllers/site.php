@@ -31,8 +31,60 @@ class Site extends CI_Controller{
         {
             $data['records'] = $query;
         }
+        // loads the model. if the upload posts, call the do model method from the gallery model Model.
+        $this->load->model('gallery_model');
+        if ($this->input->post('upload')){
+            $this->gallery_model->do_upload();
+        }
+        // displays the images
+        $data['images'] = $this->gallery_model->get_images();
         //$data['username'] = $this->session->userdata('username');
         $data['main_content'] = '/pages/profile_designer';
+        $this->load->view('templates/template',$data);
+        
+    }
+    function designers(){
+        
+        $this->load->model('user_model');
+        $data = array(
+        $session_id = $this->session->userdata('session_id')
+        ); // if no data is there and you wont get an error
+        if($query = $this->user_model->get_profile())
+        {
+            $data['records'] = $query;
+        }
+        //$data['username'] = $this->session->userdata('username');
+        $data['main_content'] = '/pages/browse_designers';
+        $this->load->view('templates/template',$data);
+        
+    }
+     function business(){
+        
+        $this->load->model('user_model');
+        $data = array(
+        $session_id = $this->session->userdata('session_id')
+        ); // if no data is there and you wont get an error
+        if($query = $this->user_model->get_profile())
+        {
+            $data['records'] = $query;
+        }
+        //$data['username'] = $this->session->userdata('username');
+        $data['main_content'] = '/pages/browse_business';
+        $this->load->view('templates/template',$data);
+        
+    }
+    function jobs(){
+        
+        $this->load->model('user_model');
+        $data = array(
+        $session_id = $this->session->userdata('session_id')
+        ); // if no data is there and you wont get an error
+        if($query = $this->user_model->get_profile())
+        {
+            $data['records'] = $query;
+        }
+        //$data['username'] = $this->session->userdata('username');
+        $data['main_content'] = '/pages/browse_jobs';
         $this->load->view('templates/template',$data);
         
     }

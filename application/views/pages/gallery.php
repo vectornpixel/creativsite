@@ -42,13 +42,17 @@
 
             <div id="upload">
                 <label>Category</label>
+                
+                <?php
+                // loads gallery controller
+                echo form_open_multipart('site/gallery');?>
                 <select name="category" id="category">
                     <option>Logo Design</option>
                     <option>Web Design</option>
                 </select>
+                <br>
                 <?php
-                // loads gallery controller
-                echo form_open_multipart('site/gallery');
+                
                 echo form_upload('userfile');
                 echo form_submit('upload', 'Upload');
                 echo form_close();
@@ -56,32 +60,29 @@
             </div>
           
            <div class="row offsetbottom">
-        <div class="span4">
-          <div class="item">
-            <div class="thumb">
+               
                 <?php if(isset($images) && count($images)):
-                    foreach($images as $image): ?>
-                <div class="thumb">
-                    <a href="<?php echo $image['url']; ?>">
-                        <img src="<?php echo $image['thumb_url'];?>">
-
-                    </a>
+                foreach($images as $image): ?>  
+                 <div class="span4">
+                    <div class="item">
+                        <div class="thumb">
+                            <a href="<?php echo $image['url']; ?>">
+                            <img src="<?php echo $image['thumb_url'];?>">
+                            </a>
+                            <div class="info">
+                            <h3>Category Name</h3>
+                        </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="info">
-                <h3>Logo Design</h3>
-                </div>
-                <?php endforeach; else: ;?>
+               <?php endforeach; else: ;?>
                 <img src="<?php echo (URL.'images/holder-item.jpg');?>">
                 <div id="blank_gallery">Please Upload an Image</div>
                 <div class="info">
                 <h3>No Title Added</h3>
                  </div>
                 <?php endif; ?>
-
-            </div>
-    
-       </div>
-        </div>
+               
         
       </div>
           

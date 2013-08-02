@@ -48,7 +48,7 @@ class Gallery_model extends CI_Model{
             'new_image' => $uploadPath. '/thumbs',
             'maintain_ration' => true,
             'width' => 250,
-            'height' => 220
+            'height' => 250
             
         );
         
@@ -71,6 +71,7 @@ class Gallery_model extends CI_Model{
         /**tested and working session script**/
         $id = $this->session->userdata('username');
         $this->db->where('username',$id);
+
         /***/
         $folderName = $id;
         $uploadPath =  'portfolio/' . $folderName;
@@ -83,7 +84,8 @@ class Gallery_model extends CI_Model{
         foreach ($files as $file){
             $images [] = array(
                 'url' => '../portfolio/' .$id . '/' . $file,
-                'thumb_url' => base_url() .$uploadPath . '/thumbs/' . $file
+                'thumb_url' => base_url() .$uploadPath . '/thumbs/' . $file,
+
             );
         }
         return $images;
