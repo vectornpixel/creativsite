@@ -35,30 +35,56 @@
         </div>
         <div class="clearfix"></div>
       <!-- Example row of columns -->
-      <br><br>
-          <ul class="nav nav-tabs" style="float:left !important; width:100% !important;">
-        <li><a href="#account" data-toggle="tab">Account Information</a></li>
-        <li><a href="#password" data-toggle="tab">Change Password</a></li>
-        </ul>
- <div class="clearfix"></div>
-  <div class="tab-content">
-<div class="tab-pane active" id="account"><h2>Account Information</h2>
+ 
+          <h2>Project Management</h2>
+          <hr>
+          <h4>PROJECTS APPLIED FOR</h4>
+          <div class="row">
+        <div class="span7">
+            <ul class="job2">
+                <li class="job-views">
+               
+                    <h4>2/10</h4>
+                </li>
+                <li class="job-info2">
+                    <h4>Wordpress Design</h4>
+                    <p>In need of Wordpress Design for bakery.</p>
+                </li>
+                <li class="job-location"> 
+              
+                    <span class="removebtn"><a href="#">REMOVE</a></span>
+                  
+                </li>
+            </ul>
+             
+        </div>
+        <div class="span7">
+            <ul class="job2">
+                <li class="job-views">
+               
+                    <h4>2/10</h4>
+                </li>
+                <li class="job-info2">
+                    <h4>Wordpress Design</h4>
+                    <p>In need of Wordpress Design for bakery.</p>
+                </li>
+                <li class="job-location"> 
+              
+                    <span class="removebtn"><a href="#">REMOVE</a></span>
+                  
+                </li>
+            </ul>
+             
+        </div>
+          </div>
+       
+       
+   <div class="clearfix"></div>
+      
+
+       <h2>Account Information</h2>
        <hr>
        <div class="span7">
-            <div id="upload">
-                <label>Category</label>
-                
-                <?php
-                // loads gallery controller
-                echo form_open_multipart('site/update');?>
-                <br>
-                <?php
-                
-                echo form_upload('userfile');
-                echo form_submit('upload', 'Upload');
-                echo form_close();
-                ?>
-            </div>
           <?php echo form_open('site/update/')?>
                 <fieldset>
                  <label>First Name</label>
@@ -95,26 +121,22 @@
                 <button type="submit" class="btn">Submit</button>
                 </fieldset>
              <?php echo form_close();?>
-       </div></div>
-<div class="tab-pane" id="password"><h2>Change Password</h2>
+       </div>
+  <div class="clearfix"></div>
+       <h2>Change Password</h2>
        <hr>
        <div class="span7">
-
            <form>
                 <fieldset>
                  <label>New Password</label>
-                 <input type="text" name="password" id="password" placeholder="">
+                 <input type="text" placeholder="">
                  <label>Confirm Password</label>
-                 <input type="text" name="password2" id="password2" placeholder="">
+                 <input type="text" placeholder="">
                 <br>
                 <button type="submit" class="btn">Submit</button>
                 </fieldset>
                </form>
-       </div></div>
-
-</div>
-
-       
+       </div>
  
 
     </div>

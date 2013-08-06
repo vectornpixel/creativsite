@@ -76,7 +76,7 @@ class Gallery_model extends CI_Model{
         //loops through the files and displays the image thumbnail and url
         foreach ($files as $file){
             $images [] = array(
-                'url' => '../portfolio/' .$id . '/' . $file,
+                'url' => base_url() .$uploadPath . '/'. $file,
                 'thumb_url' => base_url() .$uploadPath . '/thumbs/' . $file,
 
             );

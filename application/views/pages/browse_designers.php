@@ -25,174 +25,23 @@
   
       
       <div class="row offsetbottom">
-    <div class="span4">
-          <div class="item">
-            <div class="thumb">
-                <img src="<?php echo (URL.'images/holder-item.jpg');?>">
-            <div class="info">
-                <h2>Kanvaz Kid</h2>
-            </div>
-            </div>
-        <ul class="meta">
-            <li class="meta-designs">
-                <h3>20</h3>
-                <h4>PROJECTS</h4>
-            </li>
-            <li class="meta-payments">
-                <h3>50</h3>
-                <h4>DESIGNS</h4>
-            </li>
-        </ul>
-       </div>
-        </div>
-          <div class="span4">
-          <div class="item">
-        <div class="thumb">
-            <img src="<?php echo (URL.'images/holder-item.jpg');?>">
-        <div class="info">
-            <h2>Kanvaz Kid</h2>
-        </div>
-        </div>
-        <ul class="meta">
-                <li class="meta-designs">
-                    <h3>20</h3>
-                    <h4>PROJECTS</h4>
-                </li>
-                <li class="meta-payments">
-                    <h3>50</h3>
-                    <h4>DESIGNS</h4>
-                </li>
-        </ul>
-       </div>
-        </div>
-          <div class="span4">
-          <div class="item">
-        <div class="thumb">
-            <img src="<?php echo (URL.'images/holder-item.jpg');?>">
-        <div class="info">
-            <h2>Kanvaz Kid</h2>
-        </div>
-        </div>
-        <ul class="meta">
-                <li class="meta-designs">
-                    <h3>20</h3>
-                    <h4>PROJECTS</h4>
-                </li>
-                <li class="meta-payments">
-                    <h3>50</h3>
-                    <h4>DESIGNS</h4>
-                </li>
-        </ul>
-       </div>
-        </div>
           
-          <div class="span4">
-          <div class="item">
-        <div class="thumb">
-            <img src="<?php echo (URL.'images/holder-item.jpg');?>">
-        <div class="info">
-            <h2>Kanvaz Kid</h2>
-        </div>
-        </div>
-        <ul class="meta">
-                <li class="meta-designs">
-                    <h3>20</h3>
-                    <h4>PROJECTS</h4>
-                </li>
-                <li class="meta-payments">
-                    <h3>50</h3>
-                    <h4>DESIGNS</h4>
-                </li>
-        </ul>
-       </div>
-        </div>
+          
+           <?php if(isset($records)) : foreach($records as $row) : ?> 
+                 <div class="span4">
+                    <div class="item">
+                        <div class="thumb">
+                            <img src="<?php echo (URL.'images/holder-item.jpg');?>">
+                            <div class="info">
+                            <h3><?php echo $row->username; ?></h3></h3>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+               <?php endforeach; else: ;?>
+                <h2> ERROR</h2>
+                <?php endif; ?>
         
-      </div>
-      
-      
-      <div class="row">
-        <div class="span4">
-          <div class="item">
-            <div class="thumb">
-                <img src="<?php echo (URL.'images/holder-item.jpg');?>">
-            <div class="info">
-                <h2>Kanvaz Kid</h2>
-            </div>
-            </div>
-        <ul class="meta">
-            <li class="meta-designs">
-                <h3>20</h3>
-                <h4>PROJECTS</h4>
-            </li>
-            <li class="meta-payments">
-                <h3>50</h3>
-                <h4>DESIGNS</h4>
-            </li>
-        </ul>
-       </div>
-        </div>
-          <div class="span4">
-          <div class="item">
-        <div class="thumb">
-            <img src="<?php echo (URL.'images/holder-item.jpg');?>">
-        <div class="info">
-            <h2>Kanvaz Kid</h2>
-        </div>
-        </div>
-        <ul class="meta">
-                <li class="meta-designs">
-                    <h3>20</h3>
-                    <h4>PROJECTS</h4>
-                </li>
-                <li class="meta-payments">
-                    <h3>50</h3>
-                    <h4>DESIGNS</h4>
-                </li>
-        </ul>
-       </div>
-        </div>
-          <div class="span4">
-          <div class="item">
-        <div class="thumb">
-            <img src="<?php echo (URL.'images/holder-item.jpg');?>">
-        <div class="info">
-            <h2>Kanvaz Kid</h2>
-        </div>
-        </div>
-        <ul class="meta">
-                <li class="meta-designs">
-                    <h3>20</h3>
-                    <h4>PROJECTS</h4>
-                </li>
-                <li class="meta-payments">
-                    <h3>50</h3>
-                    <h4>DESIGNS</h4>
-                </li>
-        </ul>
-       </div>
-        </div>
-          
-          <div class="span4">
-          <div class="item">
-        <div class="thumb">
-            <img src="<?php echo (URL.'images/holder-item.jpg');?>">
-        <div class="info">
-            <h2>Kanvaz Kid</h2>
-        </div>
-        </div>
-        <ul class="meta">
-                <li class="meta-designs">
-                    <h3>20</h3>
-                    <h4>PROJECTS</h4>
-                </li>
-                <li class="meta-payments">
-                    <h3>50</h3>
-                    <h4>DESIGNS</h4>
-                </li>
-        </ul>
-       </div>
-        </div>
-          
       </div>
 
       <hr>

@@ -45,11 +45,11 @@ class Site extends CI_Controller{
     }
     function designers(){
         
-        $this->load->model('user_model');
+        $this->load->model('data_model');
         $data = array(
-        $session_id = $this->session->userdata('session_id')
+
         ); // if no data is there and you wont get an error
-        if($query = $this->user_model->get_profile())
+        if($query = $this->data_model->get_designers())
         {
             $data['records'] = $query;
         }
@@ -114,6 +114,7 @@ class Site extends CI_Controller{
             'website' => $this->input->post('website'),
              'bio' => $this->input->post('bio'),
             'industry' => $this->input->post('industry'),
+            'photo' => $this->input->post('photo'),
             'location' => $this->input->post('location')
         );
 

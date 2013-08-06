@@ -17,7 +17,6 @@
                  </div>
             </div>
             <div class="userbio">
-                <h4><?php echo anchor('login/logout/')?> </h4>
                <?php if(isset($records)) : foreach($records as $row) : ?>
                 <h2><?php echo anchor('site/edit/'. $row->username, $row->firstname); $row->firstname; ?> <?php echo $row->lastname; ?></h2>
                 <h5><?php echo $row->location; ?></h3>
@@ -36,16 +35,14 @@
         <div class="clearfix"></div>
       <!-- Example row of columns -->
       <hr>
-            <ul class="category center2">
-                
-             
-              <li class="mainbtn"><a href="#">Portfolio</a></li>
-              <li class="mainbtn"><a href="#">Projects</a></li>
+       <ul class="nav nav-tabs" style="float:left !important; width:100% !important;">
+        <li><a href="#portfolio" data-toggle="tab">Portfolio</a></li>
+        <li><a href="#projects" data-toggle="tab">Projects</a></li>
+        </ul>
 
-  
-            </ul>
    <div class="clearfix"></div>
-      
+        <div class="tab-content">
+<div class="tab-pane active" id="portfolio">
       <div class="row offsetbottom">
                
                 <?php if(isset($images) && count($images)):
@@ -72,7 +69,10 @@
                
         
       </div>
-      
+</div>
+        <div class="tab-pane active" id="projects">
+</div>
+        </div>
  
 
       <hr>

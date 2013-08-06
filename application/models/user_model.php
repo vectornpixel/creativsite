@@ -15,7 +15,7 @@ class User_model extends CI_Model{
 
           
     }
-    
+   
     function insert_gallery($data){
         $this->db->insert('freeusers',$data);
         return;
@@ -39,6 +39,8 @@ class User_model extends CI_Model{
         $this->db->where('id',$this->uri->segment(3));
         $this->db->delete('freeusers');
     }
+    
+
 }
 
 
