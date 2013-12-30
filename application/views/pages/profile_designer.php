@@ -17,7 +17,8 @@
                  </div>
             </div>
             <div class="userbio">
-               <?php if(isset($records)) : foreach($records as $row) : ?>
+               <?php if(isset($records)) { 
+                   foreach($records as $row) { ?>
                 <h2><?php echo anchor('site/edit/'. $row->username, $row->firstname); $row->firstname; ?> <?php echo $row->lastname; ?></h2>
                 <h5><?php echo $row->location; ?></h3>
                 <?php echo anchor($row->website);  $row->website; ?>
@@ -25,10 +26,10 @@
                 <p><?php echo $row->bio; ?></p>
             
                 
-                <?php endforeach; ?>
-                <?php else : ?>
+                   <?php } ?>
+               <?php }else{ ?>
                 <h2> No records </h2>
-                <?php endif; ?>
+               <?php }; ?>
  
             </div>
         </div>
@@ -45,8 +46,10 @@
 <div class="tab-pane active" id="portfolio">
       <div class="row offsetbottom">
                
-                <?php if(isset($images) && count($images)):
-                foreach($images as $image): ?>  
+                <?php 
+                // images variable grabbed from gallery model
+                if(isset($images) && count($images)){
+                foreach($images as $image){ ?>  
                  <div class="span4">
                     <div class="item">
                         <div class="thumb">
@@ -59,13 +62,13 @@
                         </div>
                     </div>
                 </div>
-               <?php endforeach; else: ;?>
+                <?php } }else{ ?>
                 <img src="<?php echo (URL.'images/holder-item.jpg');?>">
                 <div id="blank_gallery">Please Upload an Image</div>
                 <div class="info">
                 <h3>No Title Added</h3>
                  </div>
-                <?php endif; ?>
+                <?php }; ?>
                
         
       </div>

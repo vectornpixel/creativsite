@@ -45,7 +45,8 @@ function checkPass()
       
             </div>
           <div class="">
-              <?php if(isset($records)) : foreach($records as $row) : ?>
+              <?php if(isset($records)) { 
+                  foreach($records as $row) { ?>
  
               <li class="dropdown pull-right">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<?php echo (URL.'images/nav-settings.jpg');?>"></a>
@@ -67,10 +68,10 @@ function checkPass()
                     <li><a href="#">Messages</a></li>
                   </ul>
               </li> 
-                  <?php endforeach; ?>
-                <?php else : ?>
+                  <?php } ?>
+              <?php }else{  ?>
                 
-                <?php endif; ?>
+              <?php }; ?>
             </div>
         <div class="container">
          

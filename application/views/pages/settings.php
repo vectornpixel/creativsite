@@ -18,7 +18,8 @@
                  </div>
             </div>
             <div class="userbio">
-               <?php if(isset($records)) : foreach($records as $row) : ?>
+               <?php if(isset($records)) {
+                foreach($records as $row) { ?>
                 <h2><?php echo anchor('site/edit/'. $row->username, $row->firstname); $row->firstname; ?> <?php echo $row->lastname; ?></h2>
                 <h5><?php echo $row->location; ?></h3>
                 <?php echo anchor($row->website);  $row->website; ?>
@@ -26,10 +27,10 @@
                 <p><?php echo $row->bio; ?></p>
             
                 
-                <?php endforeach; ?>
-                <?php else : ?>
+                <?php } ?>
+               <?php }else{ ?>
                 <h2> No records </h2>
-                <?php endif; ?>
+               <?php } ?>
  
             </div>
         </div>

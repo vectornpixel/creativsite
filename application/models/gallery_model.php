@@ -5,6 +5,54 @@ class Gallery_model extends CI_Model{
         parent::__construct();
     }
     
+    function photo_upload(){
+       //Loading the session data from the database
+        $id = $this->session->userdata('username');
+        $this->db->where('username',$id);
+      
+        // Creating the file if it doesnt exsit and creating a folder with the users name setting the upload path
+        $folderName = $id;
+        $uploadPath =  './users/' . $folderName;
+        if(!file_exists($uploadPath)){
+            $create = mkdir($uploadPath, 0777);
+        if(!$create)
+            return;
+        }
+        //Image configurating settings
+        $config = array(
+            'allowed_types' => 'jpg|jpeg|gif|png',
+            'upload_path' => $uploadPath,
+            'max_size' => 3000
+        );
+
+        // loads the library and sets where its going to go to
+        $this->load->library('upload',$config);
+        // this performs the upload operation
+        $this->upload->photo_upload();
+        //returns data about upload ( file location )
+        $image_data = $this->upload->data();
+        
+        //Sets the width & height of thumbnail and copies it to thumbnail folder
+         $config = array(
+            'source_image' => $image_data['full_path'],
+            'new_image' => $uploadPath. '/thumbs',
+            'maintain_ration' => true,
+            'width' => 250,
+            'height' => 250
+        );
+        
+        // Upload information about upload into the database table
+        $data = array(
+        'username' => $id,
+        'category' => $this->input->post('category'),
+        'filename' => $image_data['file_name'],
+           );
+        
+        $this->db->insert('portfolio', $data ); 
+        $this->load->library('image_lib', $config);
+        $this->image_lib->resize();
+    }
+    
     function do_upload(){
         //Loading the session data from the database
         $id = $this->session->userdata('username');
@@ -78,7 +126,6 @@ class Gallery_model extends CI_Model{
             $images [] = array(
                 'url' => base_url() .$uploadPath . '/'. $file,
                 'thumb_url' => base_url() .$uploadPath . '/thumbs/' . $file,
-
             );
         }
         return $images;

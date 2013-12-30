@@ -8,8 +8,8 @@ class User_model extends CI_Model{
  
     function get_profile(){
         //$id = $this->uri->segment(3);
-        $id = $this->session->userdata('username');
-        $this->db->where('username',$id);
+       $id = $this->session->userdata('username');
+       $this->db->where('username',$id);
        $query = $this->db->get('freeusers');
        return $query->result();
 
@@ -36,7 +36,7 @@ class User_model extends CI_Model{
 
  
     function delete_row(){
-        $this->db->where('id',$this->uri->segment(3));
+        $this->db->where('user_id',$this->uri->segment(3));
         $this->db->delete('freeusers');
     }
     

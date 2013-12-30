@@ -15,5 +15,6 @@
     <script src="<?php echo(JS.'/bootstrap-collapse.js')?>"></script>
     <script src="<?php echo(JS.'/bootstrap-carousel.js')?>"></script>
     <script src="<?php echo(JS.'/bootstrap-typeahead.js')?>"></script>
+
 </body>
 </html>
