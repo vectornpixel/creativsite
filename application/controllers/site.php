@@ -4,7 +4,7 @@ class Site extends CI_Controller{
     function __construct(){
         parent::__construct();
     }
-
+   
     function members(){
         
         $this->load->model('user_model');
@@ -47,8 +47,8 @@ class Site extends CI_Controller{
         
         $this->load->model('data_model');
         $data = array(
-
-        ); // if no data is there and you wont get an error
+        $session_id = $this->session->userdata('session_id')
+        );  // if no data is there and you wont get an error
         if($query = $this->data_model->get_designers())
         {
             $data['records'] = $query;

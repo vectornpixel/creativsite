@@ -2,7 +2,7 @@
 
 
 <div class="hero-unit">
-    <img src="<?php echo (URL.'images/home-head.jpg');?>">
+    <a href="login/userlogin"><img src="<?php echo (URL.'images/home-head.jpg');?>"></a>
 
   </div>
     <div class="container">
@@ -15,7 +15,7 @@
         <h2><b>How It Works</b></h2>
         </header>
       <div class="row center">
-          <img src="<?php echo (URL.'images/howitworks.png');?>">
+           <img src="<?php echo (URL.'images/howitworks.png');?>">
       </div>
       
 <header class="title">

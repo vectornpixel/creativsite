@@ -1,7 +1,12 @@
 <?php
 
 class Login extends CI_Controller{
-    function index(){
+     function index(){
+        // creates dynamic page from template.php - set main content to the page you want to load
+        $data['main_content'] = '/pages/index';
+        $this->load->view('/templates/template', $data);
+    }
+    function userlogin(){
         // creates dynamic page from template.php - set main content to the page you want to load
         $data['main_content'] = '/pages/login_form';
         $this->load->view('/templates/template', $data);
@@ -14,7 +19,6 @@ class Login extends CI_Controller{
         
         // if the users credentials validated
         if($query){
-         
             $data = array(
                 'username' => $this->input->post('username'),
                 'email' => $this->input->post('email'),
