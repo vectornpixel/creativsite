@@ -35,7 +35,7 @@ class Gallery_model extends CI_Model{
         //Sets the width & height of thumbnail and copies it to thumbnail folder
          $config = array(
             'source_image' => $image_data['full_path'],
-            'new_image' => $uploadPath. '/thumbs',
+            'new_image' => $uploadPath,
             'maintain_ration' => true,
             'width' => 250,
             'height' => 250
