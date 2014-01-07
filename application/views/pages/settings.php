@@ -46,13 +46,12 @@
 <div class="tab-pane active" id="account"><h2>Account Information</h2>
        <hr>
        <div class="span7">
-            <div id="upload">
+           <div id="upload">
                 <label>Category</label>
                 
                 <?php
                 // loads gallery controller
                 echo form_open_multipart('site/update');?>
-                <br>
                 <?php
                 
                 echo form_upload('userfile');
@@ -60,6 +59,7 @@
                 echo form_close();
                 ?>
             </div>
+       
           <?php echo form_open('site/update/')?>
                 <fieldset>
                  <label>First Name</label>
